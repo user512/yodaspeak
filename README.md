@@ -22,7 +22,18 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+  require 'yodaspeak'
+
+  // Please get your key api at https://market.mashape.com/ismaelc/yoda-speak
+  Yodaspeak.credentials("API_KEY")
+
+  Yodaspeak.speak("You must seek advice.")
+  // Will return a Unirest Object
+
+  Yodaspeak.speak("You must seek advice.").body
+  #=> "Seek advice, you must.  Yeesssssss."
+```
 
 ## Development
 
