@@ -4,16 +4,19 @@ require "Unirest"
 module Yodaspeak
 
   module Default
-    @@api_endpoint = "https://yoda.p.mashape.com/yoda"
+    @@api_endpoint = "https://yoda.p.mashape.com/yoda?sentence="
   end
 
   def self.speak words
-    @@api_endpoint += "?sentence=" + words.split(" ").join("+")
-    Unirest.get("https://yoda.p.mashape.com/yoda?sentence=You+will+learn+how+to+speak+like+me+someday.++Oh+wait.", headers: credentials)
+    include Default
+    @api_endpoint = @@api_endpoint
+    yodaish = words.split(" ").join("+")
+    @api_endpoint += yodaish
+    Unirest.get(@api_endpoint, headers: @headers)
   end
 
   def self.credentials api_key
-    {
+    @headers= {
       "X-Mashape-Key" => api_key,
       "Accept" => "text/plain"
     }
