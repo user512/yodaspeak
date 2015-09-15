@@ -31,7 +31,7 @@ Or install it yourself as:
   Yodaspeak.credentials("API_KEY")
 
   Yodaspeak.speak("You must seek advice.")
-  #=> Will return a Unirest Object
+  #=> Will return an Unirest Object
 
   Yodaspeak.speak("You must seek advice.").body
   #=> "Seek advice, you must.  Yeesssssss."
