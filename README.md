@@ -1,8 +1,10 @@
 # Yodaspeak
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/yodaspeak`. To experiment with that code, run `bin/console` for an interactive prompt.
+This is a ruby gem to consume the Yoda Speak API.
+Please obtain API key from mashape.com to get started.
 
-TODO: Delete this and the text above, and describe your gem
+Credit to http://www.yodaspeak.co.uk/ and ISMAELC
+
 
 ## Installation
 
@@ -25,11 +27,11 @@ Or install it yourself as:
 ```ruby
   require 'yodaspeak'
 
-  // Please get your key api at https://market.mashape.com/ismaelc/yoda-speak
+
   Yodaspeak.credentials("API_KEY")
 
   Yodaspeak.speak("You must seek advice.")
-  // Will return a Unirest Object
+  #=> Will return a Unirest Object
 
   Yodaspeak.speak("You must seek advice.").body
   #=> "Seek advice, you must.  Yeesssssss."
