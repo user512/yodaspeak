@@ -1,4 +1,4 @@
-# Yodaspeak
+# Yodaspeak [![Gem Version](https://badge.fury.io/rb/yodaspeak.svg)](http://badge.fury.io/rb/yodaspeak)
 
 This is a ruby gem to consume the Yoda Speak API.
 Please obtain API key from mashape.com to get started.
