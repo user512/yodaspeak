@@ -1,4 +1,5 @@
 require "yodaspeak/version"
+require 'unirest'
 
 module Yodaspeak
 
