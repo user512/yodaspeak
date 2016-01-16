@@ -15,6 +15,8 @@ class Yodaspeak
     Unirest.get("#{ENDPOINT}?sentence=#{words}", headers: headers).body
   end
 
+  private
+
   def headers
     {
       "X-Mashape-Key" => @api_key,
