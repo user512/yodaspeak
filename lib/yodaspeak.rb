@@ -1,25 +1,24 @@
 require "yodaspeak/version"
 require 'unirest'
 
-module Yodaspeak
+class Yodaspeak
+  ENDPOINT = "https://yoda.p.mashape.com/yoda".freeze
 
-  module Default
-    @@api_endpoint = "https://yoda.p.mashape.com/yoda?sentence="
+  attr_writer :api_key
+
+  def initialize(api_key = nil)
+    @api_key = api_key
   end
 
-  def self.speak words
-    include Default
-    @api_endpoint = @@api_endpoint
-    yodaish = words.split(" ").join("+")
-    @api_endpoint += yodaish
-    Unirest.get(@api_endpoint, headers: @headers)
+  def speak(words)
+    words.gsub!(" ", "+")
+    Unirest.get("#{ENDPOINT}?sentence=#{words}", headers: headers).body
   end
 
-  def self.credentials api_key
-    @headers= {
-      "X-Mashape-Key" => api_key,
-      "Accept" => "text/plain"
+  def headers
+    {
+      "X-Mashape-Key" => @api_key,
+      "Accept"        => "text/plain"
     }
   end
-
 end

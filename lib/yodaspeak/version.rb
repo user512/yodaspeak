@@ -1,3 +1,3 @@
-module Yodaspeak
+class Yodaspeak
   VERSION = "0.1.2"
 end
