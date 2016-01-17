@@ -28,7 +28,7 @@ Or install it yourself as:
   require 'yodaspeak'
 
   yoda = Yodaspeak.new("API_KEY")
-  Yoda.speak("You must seek advice.")
+  yoda.speak("You must seek advice.")
   #=> "Seek advice, you must.  Yeesssssss."
 ```
 
