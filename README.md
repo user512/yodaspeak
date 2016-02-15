@@ -27,13 +27,8 @@ Or install it yourself as:
 ```ruby
   require 'yodaspeak'
 
-
-  Yodaspeak.credentials("API_KEY")
-
-  Yodaspeak.speak("You must seek advice.")
-  #=> Will return an Unirest Object
-
-  Yodaspeak.speak("You must seek advice.").body
+  yoda = Yodaspeak.new("API_KEY")
+  yoda.speak("You must seek advice.")
   #=> "Seek advice, you must.  Yeesssssss."
 ```
 
